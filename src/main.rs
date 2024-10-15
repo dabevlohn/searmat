@@ -23,10 +23,8 @@ impl GetKeys for Client {
     async fn run(&self, uid: &User) -> HttpResult<Response> {
         let mut arg = BTreeMap::new();
         arg.insert(uid.user_id.to_owned(), vec![]);
-        // dbg!(arg.clone());
         let mut request = Request::new();
         request.device_keys = arg;
-        dbg!(request.clone());
         self.send(request, None).await
     }
 }
@@ -65,7 +63,9 @@ impl UserProfiles {
     async fn get_keys(&self) {
         for u in self.uids.iter() {
             match self.client.run(u).await {
-                Ok(r) => println!("{:?}", r),
+                Ok(r) => {
+                    println!("{:?} - {:?}", r.device_keys.keys(), r.device_keys.values())
+                }
                 Err(e) => println!("{}", e),
             }
         }
@@ -86,6 +86,6 @@ async fn main() -> anyhow::Result<()> {
     };
     let u = <&UserId>::try_from(user.as_str()).unwrap();
     let mut profiles = UserProfiles::init(u, &pass).await;
-    profiles.search("chope").await.get_keys().await;
+    profiles.search("lom").await.get_keys().await;
     Ok(())
 }

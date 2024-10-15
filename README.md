@@ -1,1 +1,5 @@
-# searmat
+
+# Searmat
+
+![Terminal](./assets/term.svg)
+
