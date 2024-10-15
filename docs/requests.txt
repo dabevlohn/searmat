@@ -1,0 +1,126 @@
+POST /_matrix/client/v3/publicRooms HTTP/2
+Host: matrix-client.matrix.org
+User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:131.0) Gecko/20100101 Firefox/131.0
+Accept: application/json
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate, br, zstd
+Content-Type: application/json
+Content-Length: 68
+Origin: https://app.element.io
+DNT: 1
+Sec-GPC: 1
+Sec-Fetch-Dest: empty
+Sec-Fetch-Mode: cors
+Sec-Fetch-Site: cross-site
+Authorization: Bearer syt_c3BiX21lbnRvcg_WaAPEYqYhBsfOZlMynwq_4MsFyh
+Connection: keep-alive
+Priority: u=4
+Cache-Control: max-age=0
+TE: trailers
+
+{"limit":50,"filter":{"generic_search_term":"","room_types":[null]}}
+
+
+
+
+POST /_matrix/client/v3/user_directory/search HTTP/2
+Host: matrix-client.matrix.org
+User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:131.0) Gecko/20100101 Firefox/131.0
+Accept: application/json
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate, br, zstd
+Content-Type: application/json
+Content-Length: 34
+Origin: https://app.element.io
+DNT: 1
+Sec-GPC: 1
+Sec-Fetch-Dest: empty
+Sec-Fetch-Mode: cors
+Sec-Fetch-Site: cross-site
+Authorization: Bearer syt_c3BiX21lbnRvcg_WaAPEYqYhBsfOZlMynwq_4MsFyh
+Connection: keep-alive
+Priority: u=4
+Cache-Control: max-age=0
+TE: trailers
+
+{"search_term":"@chope:nope.chat"}
+
+
+
+POST https://matrix-client.matrix.org/_matrix/client/v3/user_directory/search
+POST /_matrix/client/v3/user_directory/search HTTP/2
+Host: matrix-client.matrix.org
+User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:131.0) Gecko/20100101 Firefox/131.0
+Accept: application/json
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate, br, zstd
+Content-Type: application/json
+Content-Length: 21
+Origin: https://app.element.io
+DNT: 1
+Sec-GPC: 1
+Sec-Fetch-Dest: empty
+Sec-Fetch-Mode: cors
+Sec-Fetch-Site: cross-site
+Authorization: Bearer syt_c3BiX21lbnRvcg_WaAPEYqYhBsfOZlMynwq_4MsFyh
+Connection: keep-alive
+Priority: u=4
+Cache-Control: max-age=0
+TE: trailers
+
+{"search_term":"cho"}
+
+Response:
+{"limited":true,"results":[{"user_id":"@cho:matrix.org","display_name":"cho","avatar_url":null},{"user_id":"@cho_k2:matrix.org","display_name":"cho_k2","avatar_url":"mxc://matrix.org/WKSSDpowIggNKtfpQWeWNpuF"},{"user_id":"@cho_aki:matrix.org","display_name":"cho_aki","avatar_url":null},{"user_id":"@_foonetic_Al_Cho:matrix.org","display_name":"Al_Cho","avatar_url":null},{"user_id":"@_rizon_Al_Cho:matrix.org","display_name":"Al_Cho","avatar_url":null},{"user_id":"@cho:antifash.gay","display_name":"cho","avatar_url":null},{"user_id":"@_rizon_Cha-Cho:matrix.org","display_name":"Cha-Cho","avatar_url":null},{"user_id":"@_rizon_ine-cho:matrix.org","display_name":"ine-cho","avatar_url":null},{"user_id":"@zerotoone_cho:decred.org","display_name":"zerotoone_cho","avatar_url":null},{"user_id":"@stevie_cho:status.im","display_name":"stevie_cho","avatar_url":null}]}
+
+
+
+GET https://matrix-client.matrix.org/_matrix/client/v3/profile/%40chope%3Asynod.im
+GET /_matrix/client/v3/profile/%40chope%3Asynod.im HTTP/2
+Host: matrix-client.matrix.org
+User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:131.0) Gecko/20100101 Firefox/131.0
+Accept: application/json
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate, br, zstd
+Origin: https://app.element.io
+DNT: 1
+Sec-GPC: 1
+Sec-Fetch-Dest: empty
+Sec-Fetch-Mode: cors
+Sec-Fetch-Site: cross-site
+Authorization: Bearer syt_c3BiX21lbnRvcg_WaAPEYqYhBsfOZlMynwq_4MsFyh
+Connection: keep-alive
+Priority: u=0
+Cache-Control: max-age=0
+TE: trailers
+
+Response:
+{"displayname":"chope","avatar_url":"mxc://synod.im/YUOBEWDPgOoGqTbFacMdNmar"}
+
+
+
+POST https://matrix-client.matrix.org/_matrix/client/v3/keys/query
+POST /_matrix/client/v3/keys/query HTTP/2
+Host: matrix-client.matrix.org
+User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:131.0) Gecko/20100101 Firefox/131.0
+Accept: application/json
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate, br, zstd
+Content-Type: application/json
+Content-Length: 38
+Origin: https://app.element.io
+DNT: 1
+Sec-GPC: 1
+Sec-Fetch-Dest: empty
+Sec-Fetch-Mode: cors
+Sec-Fetch-Site: cross-site
+Authorization: Bearer syt_c3BiX21lbnRvcg_WaAPEYqYhBsfOZlMynwq_4MsFyh
+Connection: keep-alive
+Priority: u=4
+Cache-Control: max-age=0
+TE: trailers
+
+{"device_keys":{"@chope:synod.im":[]}}
+
+Response:
+{"device_keys":{"@chope:synod.im":{"AYQYYVNJYH":{"algorithms":["m.megolm.v1.aes-sha2","m.olm.v1.curve25519-aes-sha2"],"device_id":"AYQYYVNJYH","keys":{"curve25519:AYQYYVNJYH":"NQCh1LBUJw2t5TKk+EOfN74HcPY7zyklUflmK/kNuV0","ed25519:AYQYYVNJYH":"LfnPyC5GQhSbMB7JTW4TdhBXPy+wqo89By1hUElwHZw"},"signatures":{"@chope:synod.im":{"ed25519:AYQYYVNJYH":"mj775f9YBHg2uqM13gNbbDmeA7fPU4iNGmA8MvEzUCaoFH9A+zoJgdAzM62Zclz/ha+pbee6fxAhvt91Lf3rAA","ed25519:qtBnK5xgT4M67oXd+ug8+yuRwgFOYhOfmgImozj+lR8":"dXJl55t0QJw0C+ZNji87I9shzw/KFJ/OSPZN0c/+O4HWZOERS3dHggEA3B4FHPArMMO7OMS0UTey3cpJEf9aAQ"}},"user_id":"@chope:synod.im","unsigned":{}},"CGPEUFQPRP":{"algorithms":["m.olm.v1.curve25519-aes-sha2","m.megolm.v1.aes-sha2"],"device_id":"CGPEUFQPRP","keys":{"curve25519:CGPEUFQPRP":"H0azkHMPB33RoCnDUlwiiYEyD8h2MMPsYpZCsZTAoV4","ed25519:CGPEUFQPRP":"8v8hAtXogWGnEbMf9Jq7x4kqkRMHk+YQqHMr5bX3CWU"},"signatures":{"@chope:synod.im":{"ed25519:CGPEUFQPRP":"qIqP2bt7seckXPjVqdLachC8BoxlNWWCxjK5GT2tnWdTQjFoo6HxaXxn06V7TJ3B1hx0NCyZr1woxsfNAggeBQ","ed25519:qtBnK5xgT4M67oXd+ug8+yuRwgFOYhOfmgImozj+lR8":"na8StkIJ/FyabcxQBh4JMlLQFmGa28CSJm+XdS0FdhofLxyiKclQJmtI7yvCO3dcWOS+ZdTOf3EqeVwDoOw0AQ"}},"user_id":"@chope:synod.im","unsigned":{}},"JSAUYBNYIT":{"algorithms":["m.olm.v1.curve25519-aes-sha2","m.megolm.v1.aes-sha2"],"device_id":"JSAUYBNYIT","keys":{"curve25519:JSAUYBNYIT":"KOO+wwT6ois1ipHFxdtTCUWGdDFgdO+ekks6VoL2Thc","ed25519:JSAUYBNYIT":"L1sy4sAuw1oZ5MWPpIRWR6Cw6Q7AsuZvLt7foRgwCCI"},"signatures":{"@chope:synod.im":{"ed25519:JSAUYBNYIT":"a1zFqKoCZIx1e30UxenV32EQKvzLXPlfF/fe/d9TPNChKqnyigsMXVRabH4mKkfO88/YQ8OY+xx1VME7GwCNCg"}},"user_id":"@chope:synod.im","unsigned":{}},"WNEYVNVBLN":{"algorithms":["m.olm.v1.curve25519-aes-sha2","m.megolm.v1.aes-sha2"],"device_id":"WNEYVNVBLN","keys":{"curve25519:WNEYVNVBLN":"NtI45hRP8arjdAv0gIR42FrAEw1hWCDxOF+EY3HFdzc","ed25519:WNEYVNVBLN":"92opHjJS4hqLx5wDsNuwBdDxPTZpO6lDerzTWHGPHSg"},"signatures":{"@chope:synod.im":{"ed25519:WNEYVNVBLN":"7Q78WpHknmkOyqOSFvFZTr2XLS6GKqrL7sApfD21WHuvyt8UvzgZ3d1jfMvoqf4YPCk/giKPwPzhLKolS5GDCQ","ed25519:qtBnK5xgT4M67oXd+ug8+yuRwgFOYhOfmgImozj+lR8":"aW5x1HuEZfgSE/g3FQa8Ib7M37RY+xctvVBOk5bFlZNHAlJ3dbN93DfILrnmrc2aE9Czs0/3eLWTN4/piBtTCw"}},"user_id":"@chope:synod.im","unsigned":{}},"XKVTOUZPAD":{"algorithms":["m.megolm.v1.aes-sha2","m.olm.v1.curve25519-aes-sha2"],"device_id":"XKVTOUZPAD","keys":{"curve25519:XKVTOUZPAD":"xSk4Prf0/np70vM3gFS8kndcOYWON9+/22meocc5VVw","ed25519:XKVTOUZPAD":"Oeq8tGvBnsCZJcFZmFvetgoD6pzNrzgv2GnY0yH1QoI"},"signatures":{"@chope:synod.im":{"ed25519:XKVTOUZPAD":"hbOFUBORs0vAJwI98fzzt4sA3m0cprzGNBBit+zSrVwWkEGCY7Wg2MyoI4DrCeAdHi5B4LDIJI3RMyRi0AQ/DQ","ed25519:qtBnK5xgT4M67oXd+ug8+yuRwgFOYhOfmgImozj+lR8":"jXe0WTMa1eVcacAMMHDNpFvbxdo7cXcdgGiObiU19Ze3If9DRMZIf50NyfzrEvyU1rWAA+FlSVTZ7qpmG8PiDA"}},"user_id":"@chope:synod.im","unsigned":{}},"YTJJBOXUAM":{"algorithms":["m.megolm.v1.aes-sha2","m.olm.v1.curve25519-aes-sha2"],"device_id":"YTJJBOXUAM","keys":{"curve25519:YTJJBOXUAM":"2DWnEkR1i4pJrjjrdr9zx9MS0IKs6E1/SOV6D4FwxBk","ed25519:YTJJBOXUAM":"PteTZA8OYO7WA8+UsuO0/1Ku0Ha8KHzcMMSFxzwUzeU"},"signatures":{"@chope:synod.im":{"ed25519:YTJJBOXUAM":"bdW+3xsY29sDvszJqTWm+apBSGBPYH2c5A+nxl5ONMseNXUZjQx16b1fbqrEAYDqJp4SF5pBB+ZIef5OhpHgCg","ed25519:qtBnK5xgT4M67oXd+ug8+yuRwgFOYhOfmgImozj+lR8":"YYtqrZGjg3isYV/nj4RuGH4vhP+hoadEGYTBrEL7NcEKdoEsGmCF5cV8ltnG9wPb++8dOZlRufV/x1CQXy8SAA"}},"user_id":"@chope:synod.im","unsigned":{}}}},"failures":{},"master_keys":{"@chope:synod.im":{"keys":{"ed25519:FytZYfUTrTc1Q0Y9JcMv4bA0Az/x37jDd2vyJaAqC2E":"FytZYfUTrTc1Q0Y9JcMv4bA0Az/x37jDd2vyJaAqC2E"},"signatures":{},"usage":["master"],"user_id":"@chope:synod.im"}},"self_signing_keys":{"@chope:synod.im":{"user_id":"@chope:synod.im","usage":["self_signing"],"keys":{"ed25519:qtBnK5xgT4M67oXd+ug8+yuRwgFOYhOfmgImozj+lR8":"qtBnK5xgT4M67oXd+ug8+yuRwgFOYhOfmgImozj+lR8"},"signatures":{"@chope:synod.im":{"ed25519:FytZYfUTrTc1Q0Y9JcMv4bA0Az/x37jDd2vyJaAqC2E":"iHIKBwNJ8Tr05HposYHNG0lcxdfI3moBC6H0tgYsmEUe3JM+UFX/g215UBAy1nlG2tJXeUKGDgEqMlv1zSieCg"}}}},"user_signing_keys":{}}
