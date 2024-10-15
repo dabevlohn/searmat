@@ -1,13 +1,34 @@
 use dotenv::dotenv;
 use matrix_sdk::{
-    ruma::{api::client::user_directory::search_users::v3::User, UserId},
-    Client,
+    ruma::{
+        api::client::keys::get_keys::v3::Request, api::client::keys::get_keys::v3::Response,
+        api::client::user_directory::search_users::v3::User, UserId,
+    },
+    Client, HttpResult,
 };
-use std::env;
+use std::{collections::BTreeMap, env};
 
 struct UserProfiles {
     uids: Vec<User>,
     client: Client,
+}
+
+trait GetKeys {
+    async fn run(&self, uid: &User) -> HttpResult<Response> {
+        todo!();
+    }
+}
+
+impl GetKeys for Client {
+    async fn run(&self, uid: &User) -> HttpResult<Response> {
+        let mut arg = BTreeMap::new();
+        arg.insert(uid.user_id.to_owned(), vec![]);
+        // dbg!(arg.clone());
+        let mut request = Request::new();
+        request.device_keys = arg;
+        dbg!(request.clone());
+        self.send(request, None).await
+    }
 }
 
 impl UserProfiles {
@@ -41,12 +62,15 @@ impl UserProfiles {
         }
         self
     }
-    // async fn get_keys(&self) {}
-    async fn print(&mut self) {
+    async fn get_keys(&self) {
         for u in self.uids.iter() {
-            dbg!(u);
+            match self.client.run(u).await {
+                Ok(r) => println!("{:?}", r),
+                Err(e) => println!("{}", e),
+            }
         }
     }
+    // async fn print(&mut self) {}
 }
 
 #[tokio::main]
@@ -62,6 +86,6 @@ async fn main() -> anyhow::Result<()> {
     };
     let u = <&UserId>::try_from(user.as_str()).unwrap();
     let mut profiles = UserProfiles::init(u, &pass).await;
-    profiles.search("chope").await.print().await;
+    profiles.search("chope").await.get_keys().await;
     Ok(())
 }
